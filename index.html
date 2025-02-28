@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nielpatrickrafael</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1 class="logo">MyPortfolio</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><ion-icon name="home-outline"></ion-icon></a></li>
+                <li><a href="#about"><ion-icon name="person-outline"></ion-icon></a></li>
+                <li><a href="#projects"><ion-icon name="briefcase-outline"></ion-icon></a></li>
+                <li><a href="#contact"><ion-icon name="mail-outline"></ion-icon></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION WITH MESSAGE AND PHOTO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-photo">
+                <img src="niel.jpeg" alt="Niel Patrick V. Rafael">
+            </div>
+            <div class="hero-text">
+                <h2>Hi, I'm Niel Patrick V. Rafael</h2>
+                <p>BSIT student with a passion for tech and innovation. Check out my work and let’s build something awesome!</p>
+                <a href="#projects" class="call-to-action">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="content">
+        <h2>About Me</h2>
+        <p>Hi, I'm Niel Patrick Rafael, a 3rd-year BSIT student with a deep passion for technology, design, 
+            and pushing the limits of innovation. I thrive on creating solutions that blend creativity 
+            with functionality, whether it's developing sleek user interfaces, building efficient systems, 
+            or exploring the latest advancements in tech. My goal is to turn ideas into reality, 
+            constantly learning and evolving along the way. Feel free to explore my work and 
+            join me on this exciting journey into the future of technology!</p>
+    </section>
+
+    <!-- SPECIALTIES SECTION -->
+    <section id="projects" class="content">
+        <h2 style="margin-bottom: 20px;">Specialties</h2>
+        <div class="specialties-grid">
+            <div class="specialty-card" onclick="toggleDefinition('html')">
+                <ion-icon name="logo-html5"></ion-icon>
+                <h3>HTML</h3>
+            </div>
+            <div class="specialty-card" onclick="toggleDefinition('python')">
+                <ion-icon name="logo-python"></ion-icon>
+                <h3>Python</h3>
+            </div>
+            <div class="specialty-card" onclick="toggleDefinition('javascript')">
+                <ion-icon name="logo-javascript"></ion-icon>
+                <h3>JavaScript</h3>
+            </div>
+        </div>
+        <div id="definition" class="definition">
+            <p id="definition-text"></p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="content">
+        <h2>Contact</h2>
+        <p>Let's collaborate and build something amazing.</p>
+        <div class="icons">
+            <a href="https://www.facebook.com/nielpatrick.rafael"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="https://www.instagram.com/nielpatrickrafael?igsh=YXUwODcyNnA3MDA4"><ion-icon name="logo-instagram"></ion-icon></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 MyPortfolio. All rights reserved.</p>
+    </footer>
+
+<script>
+    function toggleDefinition(specialty) {
+        const definitions = {
+            html: "HTML (HyperText Markup Language) is the standard language for creating web pages.",
+            python: "Python is a high-level, interpreted programming language known for its readability and versatility.",
+            javascript: "JavaScript is a programming language commonly used to create interactive effects within web browsers."
+        };
+        const definitionElement = document.getElementById('definition');
+        const definitionTextElement = document.getElementById('definition-text');
+        
+        if (definitionTextElement.innerText === definitions[specialty]) {
+            definitionElement.style.display = 'none';
+            definitionTextElement.innerText = '';
+        } else {
+            definitionTextElement.innerText = definitions[specialty];
+            definitionElement.style.display = 'block';
+        }
+    }
+</script>
+</body>
+</html>
